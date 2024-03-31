@@ -1,0 +1,20 @@
+.langs{
+    display: flex;
+    gap: 17px;
+}
+
+.icon{
+    fill: var(--c-primary);
+    width: 20px;
+    height: 20px;
+}
+
+.lang{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+
+    &.active, &:hover{
+        color: var(--c-secondary);
+    }
+}
