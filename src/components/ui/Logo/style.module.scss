@@ -1,0 +1,10 @@
+.logo{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0%;
+
+    &:hover{
+        color: var(--c-secondary);
+    }
+}
