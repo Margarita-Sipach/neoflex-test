@@ -2,7 +2,8 @@ import classNames from 'classnames';
 import cls from './style.module.scss'
 
 export enum ButtonTheme{
-    link = 'link'
+    link = 'link',
+    dark = 'dark'
 }
 
 interface ButtonProps{
