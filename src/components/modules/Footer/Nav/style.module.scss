@@ -1,0 +1,11 @@
+.nav{
+    display: flex;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 50%;
+    gap: 10px;
+}
