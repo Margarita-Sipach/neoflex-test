@@ -1,0 +1,17 @@
+.result{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    height: fit-content;
+
+    &>*{
+        width: 100%;
+    }
+}
+
+.text{
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
