@@ -1,0 +1,18 @@
+.star{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.icon{
+    fill: var(--c-yellow);
+    width: 23px;
+    height: 23px;
+}
+
+.number{
+    color: var(--c-primary);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 21px;
+}
