@@ -1,0 +1,8 @@
+.link{
+    width: 30px;
+    height: 30px;
+
+    &:hover{
+        fill: var(--c-secondary);
+    }
+}
