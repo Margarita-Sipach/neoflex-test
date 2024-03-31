@@ -11,7 +11,7 @@ interface PriceProps{
     className?: string
     price: number
     oldPrice?: number
-    theme: PriceTheme
+    theme?: PriceTheme
 }
 
 export const Price = ({className, price, oldPrice, theme = PriceTheme.secondary}: PriceProps) => <div className={classNames(cls.wrapper, className)}>
