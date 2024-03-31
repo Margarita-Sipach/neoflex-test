@@ -1,0 +1,10 @@
+.link{
+    background: none;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 21px;
+
+    &:hover{
+        color: var(--c-secondary);
+    }
+}
