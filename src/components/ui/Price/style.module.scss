@@ -1,0 +1,21 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+}
+
+.price{
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 21px;
+    color: var(--c-secondary);
+}
+
+.oldPrice{
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    text-decoration-line: line-through;
+    color: var(--c-yellow);
+}
