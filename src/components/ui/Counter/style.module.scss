@@ -1,0 +1,28 @@
+.counter{
+    display: flex;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 21px;
+    gap: 25px;
+    align-items: center;
+}
+
+.button{
+    width: 30px;
+    height: 30px;
+    background: var(--c-yellow);
+    color: var(--c-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+
+    &:hover{
+        background: var(--c-secondary);
+    }
+}
+
+.number{
+    
+}
