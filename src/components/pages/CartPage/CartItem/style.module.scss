@@ -1,0 +1,46 @@
+.item{
+    padding: 15px 18px;
+    gap: 23px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col{
+    display: flex;
+    flex-basis: 25%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info{
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.center{
+    align-items: center;
+}
+
+.right{
+    align-items: flex-end;
+}
+
+.name{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.delete{
+    width: 25px;
+    height: 20px;
+    fill: rgb(223, 100, 100);
+    &:hover{
+        fill: var(--c-dark);
+    }
+}
