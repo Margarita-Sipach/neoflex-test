@@ -1,10 +1,8 @@
-import { AmountIcon } from '../../ui/AmountIcon';
-import { Logo } from '../../ui/Logo'
+import { Outlet } from 'react-router-dom';
+import { Header } from '../Header';
 import cls from './style.module.scss'
-import { BiHeart } from "react-icons/bi";
-import { RiShoppingCart2Line } from "react-icons/ri";
 
 export const Layout = () => <>
-<AmountIcon Icon={BiHeart} amount={10}></AmountIcon>
-<AmountIcon Icon={RiShoppingCart2Line} amount={1}></AmountIcon>
-<Logo/></>
+    <Header/>
+    <Outlet/>
+</>

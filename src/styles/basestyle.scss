@@ -5,3 +5,9 @@
     color: var(--c-dark);
     letter-spacing: 0%;
 }
+
+header, main, footer{
+    max-width: 1135px;
+    margin: 10px;
+    margin: 0 auto;
+}
