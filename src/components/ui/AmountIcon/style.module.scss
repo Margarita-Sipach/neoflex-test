@@ -1,0 +1,35 @@
+.wrapper{
+    position: relative;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+
+    &:hover{
+        .icon{
+            fill: var(--c-secondary);
+        }
+    }
+}
+
+.icon{
+    width: 23px;
+    height: 23px;
+    fill: var(--c-primary);
+}
+
+.amount{
+    position: absolute;
+    background: var(--c-secondary);
+    color: var(--c-light);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    border-radius: 50%;
+    top: -8px;
+    right: -8px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
