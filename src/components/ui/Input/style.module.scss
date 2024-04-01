@@ -1,0 +1,8 @@
+.input{
+    padding: 7px 10px;
+    border: 1px var(--c-primary) solid;
+
+    &:focus{
+        border-color: var(--c-secondary);
+    }
+}

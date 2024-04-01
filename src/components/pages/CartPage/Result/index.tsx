@@ -3,7 +3,7 @@ import cls from './style.module.scss'
 import { Button, ButtonTheme } from '../../../ui/Button';
 import { Price, PriceTheme } from '../../../ui/Price';
 import { useState } from 'react';
-import { Modal } from '../../../ui/Modal';
+import { BuyModal } from '../../../modules/BuyModal';
 
 interface ResultProps{
     className?: string
@@ -19,6 +19,6 @@ export const Result = ({className, price}: ResultProps) => {
             <Price price={price} theme={PriceTheme.dark}></Price>
         </div>
         <Button onClick={() => setIsOpen(true)} theme={ButtonTheme.dark}>Перейти к оформлению</Button>
-        <Modal setIsOpen={setIsOpen} isOpen={isOpen}>Оплата</Modal>
+        <BuyModal setIsOpen={setIsOpen} isOpen={isOpen} price={price}/>
     </div>
 }
