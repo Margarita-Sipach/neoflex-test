@@ -5,12 +5,12 @@ import { Price } from '../../ui/Price'
 import { Star } from '../../ui/Star'
 import cls from './style.module.scss'
 import { Context } from '../../../App'
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { CartItemI } from '../../pages/CartPage/CartItem'
 import { AiOutlineEye } from "react-icons/ai";
 import { ProductModal } from '../ProductModal'
 
-export const Card = (card: CardI) => {
+export const Card = memo((card: CardI) => {
     const {id, img, name, star, price, oldPrice} = card;
     const {addCartItem, deleteCartItem, cartItems} = React.useContext(Context);
     const [isOpen, setIsOpen] = useState(false)
@@ -39,4 +39,4 @@ export const Card = (card: CardI) => {
         </button>
         <ProductModal setIsOpen={setIsOpen} isOpen={isOpen} {...card}/>
     </div>
-}
+})

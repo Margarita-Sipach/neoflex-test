@@ -10,16 +10,16 @@ import { getCart, saveCart } from './lib/storage';
 
 interface ContextI{
     cartItems: CartItemI[], 
-    addCartItem: any,
-    deleteCartItem: any,
-    updateCartItemAmount: any
+    addCartItem: (item: CartItemI) => () => void,
+    deleteCartItem: (id: number) => () => void,
+    updateCartItemAmount: (id: number) => (amount: number) => void
 }
 
 const defaultValue: ContextI = {
     cartItems: [],
-    addCartItem: () => {},
-    deleteCartItem: () => {},
-    updateCartItemAmount: () => {}
+    addCartItem: (item: CartItemI) => () => console.log(item),
+    deleteCartItem: (id: number) => () => console.log(id),
+    updateCartItemAmount: (id: number) => (amount: number) => {console.log(id, amount)}
 }
   
   export const Context = React.createContext(defaultValue);
@@ -46,7 +46,7 @@ const defaultValue: ContextI = {
 
 export const App = () => {
     const [cartItems, setCartItems] = useState<CartItemI[]>(getCart())
-console.log(cartItems)
+
     const addCartItem = (item: CartItemI) => {
         return () => setCartItems(prev => [...prev, item])
     }
@@ -63,7 +63,12 @@ console.log(cartItems)
       saveCart(cartItems)
     }, [cartItems])
 
-    return <Context.Provider value={{cartItems, addCartItem, deleteCartItem, updateCartItemAmount}}>
+    return <Context.Provider value={{
+      cartItems, 
+      addCartItem, 
+      deleteCartItem, 
+      updateCartItemAmount
+    }}>
         <RouterProvider router={router} />
     </Context.Provider>
 }
