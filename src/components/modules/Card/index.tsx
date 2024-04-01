@@ -5,11 +5,15 @@ import { Price } from '../../ui/Price'
 import { Star } from '../../ui/Star'
 import cls from './style.module.scss'
 import { Context } from '../../../App'
-import React from 'react'
+import React, { useState } from 'react'
 import { CartItemI } from '../../pages/CartPage/CartItem'
+import { AiOutlineEye } from "react-icons/ai";
+import { ProductModal } from '../ProductModal'
 
-export const Card = ({id, img, name, star, price, oldPrice}: CardI) => {
+export const Card = (card: CardI) => {
+    const {id, img, name, star, price, oldPrice} = card;
     const {addCartItem, deleteCartItem, cartItems} = React.useContext(Context);
+    const [isOpen, setIsOpen] = useState(false)
 
     const isCartItem = cartItems && cartItems.find((i: CartItemI) => i.id === id)
 
@@ -30,5 +34,9 @@ export const Card = ({id, img, name, star, price, oldPrice}: CardI) => {
                 </Button>
             </div>
         </div>
+        <button className={cls.eyeButton} onClick={() => setIsOpen(true)}>
+            <AiOutlineEye className={cls.eye}/>
+        </button>
+        <ProductModal setIsOpen={setIsOpen} isOpen={isOpen} {...card}/>
     </div>
 }

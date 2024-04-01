@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 30px;
     align-items: center;
+    position: relative;
 }
 
 .info{
@@ -30,4 +31,20 @@
     height: 280px;
     width: 100%;
     object-fit: contain;
+}
+
+.eyeButton{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.eye{
+    fill: var(--c-primary);
+    width: 20px;
+    height: 20px;
+
+    &:hover{
+        fill: var(--c-secondary);
+    }
 }

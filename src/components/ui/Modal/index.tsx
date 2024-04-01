@@ -14,10 +14,10 @@ interface ModalProps{
 export const Modal = ({className, children, isOpen, setIsOpen, element = document.body}: ModalProps) => {
 
     return ReactDOM.createPortal(
-        <div className={classNames(cls.modal, {[cls.active]: isOpen}, className)}
+        <div className={classNames(cls.modal, {[cls.active]: isOpen})}
              onClick={() => setIsOpen(false)}
         >
-            <div className={classNames('border', {[cls.active]: isOpen}, cls.content)}
+            <div className={classNames('border', {[cls.active]: isOpen}, cls.content, className)}
                  onClick={e => e.stopPropagation()}
             >
                 {children}
