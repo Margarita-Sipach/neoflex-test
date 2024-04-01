@@ -20,9 +20,10 @@
     transform: translate(-50%, -50%);
     top: -100%;
     background: var(--c-light);
-    padding: 20px;
+    padding: 30px 25px;
     min-height: 150px;
     min-width: 200px;
+    width: calc(100% - 20px);
 
     &.active{
         top: 50%;
