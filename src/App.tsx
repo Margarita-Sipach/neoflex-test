@@ -4,8 +4,9 @@ import { MainPage } from './components/pages/MainPage';
 import { CartPage } from './components/pages/CartPage';
 import { NotFoundPage } from './components/pages/NotFoundPage';
 import { Layout } from './components/modules/Layout';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CartItemI } from './components/pages/CartPage/CartItem';
+import { getCart, saveCart } from './lib/storage';
 
 interface ContextI{
     cartItems: CartItemI[], 
@@ -44,8 +45,8 @@ const defaultValue: ContextI = {
   ]);
 
 export const App = () => {
-    const [cartItems, setCartItems] = useState<CartItemI[]>([])
-
+    const [cartItems, setCartItems] = useState<CartItemI[]>(getCart())
+console.log(cartItems)
     const addCartItem = (item: CartItemI) => {
         return () => setCartItems(prev => [...prev, item])
     }
@@ -57,6 +58,10 @@ export const App = () => {
     const updateCartItemAmount = (id: number) => {
         return (amount: number) => setCartItems(prev => prev.map(i => i.id === id ? {...i, amount} : i))
     }
+
+    useEffect(() => {
+      saveCart(cartItems)
+    }, [cartItems])
 
     return <Context.Provider value={{cartItems, addCartItem, deleteCartItem, updateCartItemAmount}}>
         <RouterProvider router={router} />
